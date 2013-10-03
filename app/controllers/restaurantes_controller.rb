@@ -1,5 +1,9 @@
 class RestaurantesController < ApplicationController
     
+  def new 
+    @restaurante = Restaurante.new
+  end
+
   def index
     @restaurantes = Restaurante.order :nome
   end
@@ -8,10 +12,33 @@ class RestaurantesController < ApplicationController
      @restaurante = Restaurante.find(params[:id])
   end
   
+  def create
+    Restaurante.create(restaurante_params)
+
+    redirect_to(action: "show", id: @restaurante)
+  end
+  
+  def edit
+    @restaurante = Restaurante.find(params[:id])
+  end
+  
+  def update
+    @restaurante = Restaurante.find(params[:id])
+    @restaurante = update_attributes(params[:restaurante])
+    
+    redirect_to action: "show", id: @restaurante
+  end
+  
   def destroy    
      @restaurante = Restaurante.find(params[:id])
      @restaurante.destroy
     
      redirect_to(action: "index")
   end
+  
+  private
+  def restaurante_params
+      params.require(:restaurante).permit(:nome, :endereco, :especialidade)
+  end
+  
 end

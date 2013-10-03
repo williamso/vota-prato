@@ -54,7 +54,11 @@ VotaPrato::Application.routes.draw do
   #     resources :products
   #   end
 
+  get '/restaurantes/:id/edit', to: 'restaurantes#edit'
+  post '/restaurantes/:id/edit', to: 'restaurantes#edit'
+  get '/restaurantes/new/', to: 'restaurantes#new'
   get '/restaurantes/', to: 'restaurantes#index'
   get '/restaurantes/:id', to: 'restaurantes#show'
+  
   resource :restaurantes
 end

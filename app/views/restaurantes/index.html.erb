@@ -17,8 +17,13 @@
 		</td>
 		<!-- Deve ficar abaixo do td que criamos para o link "Mostrar" -->
 		<td>
-			<%= link_to 'Deletar', {action: 'destroy', id:restaurante}, {method: "delete"} %>
+			<%=link_to 'Deletar', {action: 'destroy', id:restaurante}, {method: "delete"} %>
+		</td>
+		<td>
+		<%=link_to 'Editar', {action: 'edit', id: restaurante}, {method: "edit"} %>
 		</td>
 ￼￼   </tr>
 	<% end %> 
 </table>
+<br/>
+<%= link_to 'Novo', action: 'new' %>
