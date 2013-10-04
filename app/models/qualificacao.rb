@@ -8,5 +8,10 @@ class Qualificacao < ActiveRecord::Base
                                               message: " - deve ser um número maior que 0"
       
       validates_presence_of :cliente_id, :restaurante_id
-      validates_associated :cliente, :restaurante 
+      validates_associated :cliente, :restaurante
+      
+      belongs_to :cliente
+      belongs_to :restaurante
+      
+      has_many :comentarios, :as => :comentavel 
 end

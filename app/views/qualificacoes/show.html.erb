@@ -17,8 +17,10 @@
 
 <p>
   <strong>Valor gasto:</strong>
-  <%= @qualificacao.valor_gasto %>
+  <%= valor_formatado(@qualificacao.valor_gasto) %>
 </p>
+<%= comentarios @qualificacao %>
+<%= novo_comentario @restaurante %>
 
 <%= link_to "Nova qualificação", :controller => "qualificacoes", :action => "new", :cliente => @cliente %> |
 <%= link_to 'Editar', edit_qualificacao_path(@qualificacao) %> |

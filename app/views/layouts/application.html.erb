@@ -7,9 +7,10 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body> 
 
-<%= yield %>
+<%= menu_principal %w(restaurantes clientes qualificacoes) %>
 
+<%= yield %> 
 </body>
 </html>
