@@ -1,4 +1,16 @@
 VotaPrato::Application.routes.draw do
+  
+  resources :qualificacoes
+
+  resources :clientes
+  
+  get '/restaurantes/:id/edit', to: 'restaurantes#edit'
+  post '/restaurantes/:id/edit', to: 'restaurantes#edit'
+  get '/restaurantes/new/', to: 'restaurantes#new'
+  get '/restaurantes/', to: 'restaurantes#index'
+  get '/restaurantes/:id', to: 'restaurantes#show'
+  
+  resource :restaurantes
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -54,11 +66,5 @@ VotaPrato::Application.routes.draw do
   #     resources :products
   #   end
 
-  get '/restaurantes/:id/edit', to: 'restaurantes#edit'
-  post '/restaurantes/:id/edit', to: 'restaurantes#edit'
-  get '/restaurantes/new/', to: 'restaurantes#new'
-  get '/restaurantes/', to: 'restaurantes#index'
-  get '/restaurantes/:id', to: 'restaurantes#show'
-  
-  resource :restaurantes
+
 end
