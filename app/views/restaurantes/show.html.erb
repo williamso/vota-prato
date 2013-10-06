@@ -11,6 +11,10 @@
 <b>Especialidade: </b>
 <%= @restaurante.especialidade %>
 </p>
+<p>
+<b>Foto:</b>
+<%= image_tag @restaurante.foto.url(:thumb) %> 
+</p>
 <%= comentarios @restaurante %>
 <%= novo_comentario @restaurante %>
 

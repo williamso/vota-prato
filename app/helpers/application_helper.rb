@@ -6,7 +6,7 @@ module ApplicationHelper
   end
   
   def menu_principal(controllers)
-        render partial: "menu_principal", locals: {opcoes: controllers}
+        render partial: "restaurantes/menu_principal", locals: {opcoes: controllers}
   end
   
   def valor_formatado(number)

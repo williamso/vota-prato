@@ -15,6 +15,9 @@ class Restaurante < ActiveRecord::Base
   
   has_many :comentarios, :as => :comentavel
   
+  has_attached_file :foto, styles:
+    {medium: "300x300", thumb: "100x100>"}
+    
   private 
   def primeira_letra_deve_ser_maiuscula
     errors.add(:nome, "primeira letra deve ser maiúscula") unless nome=~ /[A-Z].*/

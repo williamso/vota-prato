@@ -28,6 +28,7 @@ class ComentariosController < ApplicationController
 
     respond_to do |format|
       if @comentario.save
+        format.js
         format.html { redirect_to @comentario, notice: 'Comentario was successfully created.' }
         format.json { render action: 'show', status: :created, location: @comentario }
       else
@@ -55,9 +56,9 @@ class ComentariosController < ApplicationController
   # DELETE /comentarios/1.json
   def destroy
     @comentario.destroy
+    
     respond_to do |format|
-      format.html { redirect_to comentarios_url }
-      format.json { head :no_content }
+      format.js   { head :ok }
     end
   end
 
